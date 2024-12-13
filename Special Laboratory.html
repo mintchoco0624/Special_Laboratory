@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Letter</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background-color: #CCB9CF;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #FFF5E7;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #letter-container {
+            display: none;
+            background: url('images/bg.jpg') no-repeat center center;
+            background-size: cover;
+            border: 2px solid #FFF5E7;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #letter {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        button {
+            background: #FFF5E7;
+            color: #040301;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #E1B2BF;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Ma'am Roan</h1>
+    <button onclick="showLetter()">Open Letter</button>
+
+    <div id="letter-container">
+        <p id="letter">Hi ma'am,<br><br>
+        Gusto ko lang pong sabihin na ang swerte ko po dahil ka birthday po kita HEHEHE. To be honest po simula po noong nag iba po ang sched medyo hindi ko na po na gets mga tinuturo nyo po sa'min sorry po HUHUHU. But thank you pa rin po sa mga effort n'yo po love you ma'am :).<br><br>
+        Mula sa cute mo pong student,<br>
+        Guia</p>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="audio/Beautiful Piano Song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function showLetter() {
+            const letterContainer = document.getElementById('letter-container');
+            const music = document.getElementById('background-music');
+
+            letterContainer.style.display = 'block';
+            music.play();
+        }
+    </script>
+</body>
+</html>
